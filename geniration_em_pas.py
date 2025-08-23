@@ -12,7 +12,7 @@ class User:
             email_name = ''.join(random.choices(string.ascii_lowercase + string.digits, k=email_length))
             self.email = email_name + "@yandex.ru"
             
-            password_length = random.randint(8, 16)
+            password_length = random.randint(8, 12)
             password_chars = string.ascii_letters + string.digits + "!@#$%^&*"
             self.password = ''.join(random.choices(password_chars, k=password_length))
         

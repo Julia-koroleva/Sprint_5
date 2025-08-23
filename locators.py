@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
+class Locators:
 # Кнопка "Войти в эккаунт" на главной странице
 entrance_main_page = (By.XPATH, ".//button[text()='Войти в аккаунт']")
 
