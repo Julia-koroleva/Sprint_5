@@ -24,7 +24,7 @@ def main_site(driver):
 @pytest.fixture
 def login_password(driver):
     driver.find_element(*Locators.email_login).send_keys(Credantial.email)
-    driver.find_element(*Locators.password_login).send_keys(Credantial.passord)
+    driver.find_element(*Locators.password_login).send_keys(Credantial.password)
     driver.find_element(*Locators.entrance_login_page).click()
     return driver
 
@@ -35,7 +35,7 @@ def login_page(driver):
     return driver
     
 @pytest.fixture
-def registratin_page(driver):
+def registration_page(driver):
     login_page = register_site
     driver.get(login_page)
     return driver
@@ -44,4 +44,12 @@ def registratin_page(driver):
 def profile_page(driver):
     page = profile_site
     driver.get(page)
+    return driver
+
+@pytest.fixture
+def login_password_registration(driver):
+    driver.find_element(*Locators.email_login).send_keys(Credantial.email)
+    driver.find_element(*Locators.password_login).send_keys(Credantial.password)
+    driver.find_element(*Locators.name_registration).send_keys(Credantial.name)
+    driver.find_element(*Locators.entrance_login_page).click()
     return driver

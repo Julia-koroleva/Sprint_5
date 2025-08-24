@@ -19,13 +19,13 @@ email_login = (By.XPATH, ".//form[contains(@class, 'Account_profile__')]//input[
 password_login = (By.XPATH, ".//form[contains(@class, 'Account_profile__')]//input[@name='Пароль']")
 
 # Поле для ввода адреса электронной почты на странице регистрации
-email_registration = (By.XPATH, ".//form[contains(@action, 'register')]//input[@type='email']")
+email_reg = (By.XPATH, ".//label[contains(text(), 'Email')]/following-sibling::input")
 
 # Поле для ввода пароля на странице регистрации
-password_registration = (By.XPATH, ".//form[contains(@action, 'register')]//input[@type='Пароль']")
+password_registration = (By.XPATH, ".//input[@type='Пароль']")
 
 # Поле для ввода имени на странице регистрации
-name_registration = (By.XPATH, ".//form[contains(@action, 'register')]//input[@type='name']")
+name_registration = (By.XPATH, "//label[contains(text(), 'Имя')]/following-sibling::input")
 
 # Кнопка "Зарегистрироваться" 
 registration = (By.XPATH, ".//button[text()='Зарегистрироваться']")
