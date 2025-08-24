@@ -49,3 +49,6 @@ class Locators:
 
 # Кнопка "Начинки"
     fillings = (By.XPATH, ".//span[text()='Начинки']")
+
+# Ошибка ввода пароля при регистрации
+    mistake = (By.XPATH, ".//p[text()='Некорректный пароль']")
