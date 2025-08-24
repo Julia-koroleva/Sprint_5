@@ -2,8 +2,9 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 class Locators:
+
 # Кнопка "Войти в эккаунт" на главной странице
-entrance_main_page = (By.XPATH, ".//button[text()='Войти в аккаунт']")
+ entrance_main_page = (By.XPATH, "//button[text()='Войти в аккаунт']")
 
 # Кнопка "Личный кабинет" на главной странице
 cabinet = (By.XPATH,".//header//a[@href='/account']")
