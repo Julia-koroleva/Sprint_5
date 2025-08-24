@@ -7,7 +7,6 @@ from curl import *
 
 def test_registration(registration_page):
     user = User.create_random_user()
-    registration_page
     registration_page.find_element(*Locators.password).send_keys(user.password)  
     registration_page.find_element(*Locators.email).send_keys(user.email)  
     registration_page.find_element(*Locators.name).send_keys(user.name)  
