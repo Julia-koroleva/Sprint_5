@@ -52,3 +52,9 @@ class Locators:
 
 # Ошибка ввода пароля при регистрации
     mistake = (By.XPATH, ".//p[text()='Некорректный пароль']")
+
+# Собери бургер
+    make_burger = (By.XPATH, "//h1[contains(text(), 'Соберите бургер')]")
+
+# Логотип на главной странице
+    logo = (By.CLASS_NAME, "AppHeader_header__logo__2D0X2")

@@ -20,4 +20,12 @@ def test_personal_account_transfer_constructor(main_page_start, logo_profile):
     WebDriverWait(logo_profile, 5).until(
         expected_conditions.visibility_of_element_located(Locators.buns)
     )
-    assert main_page_start.find_element(By.XPATH, "//h1[contains(text(), 'Соберите бургер')]").text == 'Соберите бургер'
+    assert main_page_start.find_element(*Locators.make_burger).text == 'Соберите бургер'
+
+def test_personal_account_transfer_logo(main_page_start, logo_profile):
+    
+    logo_profile.find_element(*Locators.logo).click()
+    WebDriverWait(logo_profile, 5).until(
+        expected_conditions.visibility_of_element_located(Locators.buns)
+    )
+    assert main_page_start.find_element(*Locators.make_burger).text == 'Соберите бургер'
