@@ -16,22 +16,15 @@ def driver():
     driver.quit()
 
 @pytest.fixture
-def main_site(driver):
-    login_page = main_site
-    driver.get(login_page)
-    return driver
-
-@pytest.fixture
-def login_password(driver):
-    driver.find_element(*Locators.email_login).send_keys(Credantial.email)
-    driver.find_element(*Locators.password_login).send_keys(Credantial.password)
-    driver.find_element(*Locators.entrance_login_page).click()
+def main_page_start(driver):
+    login_page_start = main_site
+    driver.get(login_page_start)
     return driver
 
 @pytest.fixture
 def login_page(driver):
-    login_page = login_site
-    driver.get(login_page)
+    login_page_page = login_site
+    driver.get(login_page_page)
     return driver
     
 @pytest.fixture
@@ -47,9 +40,12 @@ def profile_page(driver):
     return driver
 
 @pytest.fixture
-def login_password_registration(driver):
-    driver.find_element(*Locators.email_login).send_keys(Credantial.email)
-    driver.find_element(*Locators.password_login).send_keys(Credantial.password)
-    driver.find_element(*Locators.name_registration).send_keys(Credantial.name)
-    driver.find_element(*Locators.entrance_login_page).click()
+def logo_profile(driver, registration_page):
+    registration_page.find_element(*Locators.password).send_keys(Credantial.password)  
+    registration_page.find_element(*Locators.email).send_keys(Credantial.email)  
+    registration_page.find_element(*Locators.name).send_keys(Credantial.name)  
+    registration_page.find_element(*Locators.registration_button).click()  
+    WebDriverWait(registration_page, 5).until(
+        expected_conditions.visibility_of_element_located(Locators.entrance_registration_page)
+    )
     return driver

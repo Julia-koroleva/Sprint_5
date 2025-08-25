@@ -5,7 +5,9 @@ from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 from curl import *
 
+
 def test_reg_mistake(registration_page):
+
     user = User.create_random_user()
     registration_page.find_element(*Locators.password).send_keys(user.mist_pass)  
     registration_page.find_element(*Locators.email).send_keys(user.email)  
@@ -14,8 +16,7 @@ def test_reg_mistake(registration_page):
     WebDriverWait(registration_page, 5).until(
         expected_conditions.visibility_of_element_located(Locators.mistake)
     )
-    current_url = "https://stellarburgers.nomoreparties.site/register"
-    assert registration_page.current_url == current_url
+    assert registration_page.current_url == "https://stellarburgers.nomoreparties.site/register"
     error_message = registration_page.find_element(*Locators.mistake).text
     assert "некорректный пароль" in error_message.lower()
     

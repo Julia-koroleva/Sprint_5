@@ -3,13 +3,13 @@ from selenium.webdriver.common.by import By
 class Locators:
 
 # Кнопка "Войти в эккаунт" на главной странице
-    entrance_main_page = (By.XPATH, "//button[text()='Войти в аккаунт']")
+    entrance_button = (By.XPATH, "//button[normalize-space()='Войти в аккаунт']")
 
 # Кнопка "Личный кабинет" на главной странице
     cabinet = (By.XPATH,".//header//a[@href='/account']")
 
 # Кнопка "Войти" на странице ввода логина и пароля
-    login_page = (By.XPATH, "//button[contains(text()='Войти')]")
+    button = (By.XPATH, "//button[contains(@class, 'button_button_type_primary__') and text()='Войти']")
 
 # Поле для ввода адреса электронной почты на странице ввода логина и пароля
     email_login = (By.XPATH, "//form[contains(@class, 'Account_profile__')]//input[@name='name']")
