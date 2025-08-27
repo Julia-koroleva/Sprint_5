@@ -7,6 +7,7 @@ from geniration_em_pas import User
 from locators import Locators
 from curl import *
 from data import Credantial
+from selenium.webdriver.support import expected_conditions as EC
 
 @pytest.fixture
 def driver():
@@ -22,10 +23,12 @@ def main_page_start(driver):
     return driver
 
 @pytest.fixture
-def login_page(driver):
-    login_page_page = login_site
-    driver.get(login_page_page)
-    return driver
+def login_page(main_page_start):
+    main_page_start.find_element(*Locators.entrance_button).click()
+    WebDriverWait(main_page_start, 10).until(
+        EC.url_contains("/login")
+    )
+    return main_page_start
     
 @pytest.fixture
 def registration_page(driver):

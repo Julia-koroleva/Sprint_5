@@ -29,3 +29,4 @@ def test_personal_account_transfer_logo(main_page_start, logo_profile):
         expected_conditions.visibility_of_element_located(Locators.buns)
     )
     assert main_page_start.find_element(*Locators.make_burger).text == 'Соберите бургер'
+    

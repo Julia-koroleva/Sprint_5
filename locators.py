@@ -12,10 +12,10 @@ class Locators:
     button = (By.XPATH, "//button[contains(@class, 'button_button_type_primary__') and text()='Войти']")
 
 # Поле для ввода адреса электронной почты на странице ввода логина и пароля
-    email_login = (By.XPATH, "//form[contains(@class, 'Account_profile__')]//input[@name='name']")
+    email_login = (By.XPATH, ".//input[@name='name']")
 
 # Поле для ввода пароля на странице ввода логина и пароля
-    password_login = (By.XPATH, "//form[contains(@class, 'Account_profile__')]//input[@name='Пароль']")
+    password_login = (By.XPATH, ".//input[@name='Пароль']")
 
 # Поле для ввода адреса электронной почты на странице регистрации
     email = (By.XPATH, ".//label[contains(text(), 'Email')]/following-sibling::input")
@@ -58,3 +58,6 @@ class Locators:
 
 # Логотип на главной странице
     logo = (By.CLASS_NAME, "AppHeader_header__logo__2D0X2")
+
+# Кнопка оформить заказ
+    make_order = (By.XPATH, ".//button[text()='Оформить заказ']")
