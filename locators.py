@@ -61,3 +61,6 @@ class Locators:
 
 # Кнопка оформить заказ
     make_order = (By.XPATH, ".//button[text()='Оформить заказ']")
+
+# Ссылка "Зарегистрироваться" на странице входа в ЛК
+    register_link = (By.XPATH, ".//a[@href='/register']")
