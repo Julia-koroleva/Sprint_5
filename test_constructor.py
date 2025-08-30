@@ -1,6 +1,5 @@
 from locators import Locators
 from selenium.webdriver.support.wait import WebDriverWait
-from curl import *
 from selenium.webdriver.support import expected_conditions as EC
 
 

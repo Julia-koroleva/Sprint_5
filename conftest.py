@@ -1,6 +1,11 @@
 import pytest
 from selenium import webdriver
-from curl import *
+from selenium.webdriver.support import expected_conditions
+from selenium.webdriver.support.wait import WebDriverWait
+from geniration_em_pas import User
+from locators import Locators
+from data import Credantial
+from selenium.webdriver.support import expected_conditions as EC
 
 @pytest.fixture
 def driver():
@@ -11,14 +16,23 @@ def driver():
 
 @pytest.fixture
 def main_page_start(driver):
-    login_page_start = main_site
+    login_page_start = "https://stellarburgers.nomoreparties.site/"
     driver.get(login_page_start)
     return driver
 
- 
 @pytest.fixture
 def registration_page(driver):
-    login_page = register_site
+    login_page = "https://stellarburgers.nomoreparties.site/register"
     driver.get(login_page)
     return driver
 
+@pytest.fixture
+def logo_profile(driver, registration_page):
+    registration_page.find_element(*Locators.password).send_keys(Credantial.password)  
+    registration_page.find_element(*Locators.email).send_keys(Credantial.email)  
+    registration_page.find_element(*Locators.name).send_keys(Credantial.name)  
+    registration_page.find_element(*Locators.registration_button).click()  
+    WebDriverWait(registration_page, 5).until(
+        expected_conditions.visibility_of_element_located(Locators.entrance_registration_page)
+    )
+    return driver
