@@ -4,8 +4,6 @@ from geniration_em_pas import User
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 from curl import *
-from data import Credantial
-from selenium import webdriver
 
 def test_transfers_account(main_page_start):
     main_page_start.find_element(*Locators.entrance_button).click()

@@ -1,11 +1,8 @@
-from selenium.webdriver.common.by import By
 from locators import Locators
-from geniration_em_pas import User
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 from curl import *
 from data import Credantial
-from selenium import webdriver
 from selenium.webdriver.support import expected_conditions as EC
 
 def test_entrance_on_the_main(main_page_start):

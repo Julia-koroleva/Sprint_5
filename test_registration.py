@@ -1,4 +1,3 @@
-from selenium.webdriver.common.by import By
 from locators import Locators
 from geniration_em_pas import User
 from selenium.webdriver.support import expected_conditions
