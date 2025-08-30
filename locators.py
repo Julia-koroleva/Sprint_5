@@ -42,13 +42,13 @@ class Locators:
     constructor = (By.XPATH, ".//a[.//p[text()='Конструктор']]")
 
 # Кнопка "Булки"
-    buns = (By.XPATH, ".//span[text()='Булки']")
+    buns = (By.XPATH, "//span[text()='Булки']/..")
 
 # Кнопка "Соусы"
-    sauces = (By.XPATH, ".//span[text()='Соусы']")
+    sauces = (By.XPATH, "//span[text()='Соусы']/..")
 
 # Кнопка "Начинки"
-    fillings = (By.XPATH, ".//span[text()='Начинки']")
+    fillings = (By.XPATH, "//span[text()='Начинки']/..")
 
 # Ошибка ввода пароля при регистрации
     mistake = (By.XPATH, ".//p[text()='Некорректный пароль']")
@@ -64,3 +64,6 @@ class Locators:
 
 # Ссылка "Зарегистрироваться" на странице входа в ЛК
     register_link = (By.XPATH, ".//a[@href='/register']")
+
+# Активная кнопка
+    active_tab = (By.XPATH, "//div[contains(@class, 'tab_tab__1SPyG tab_tab_type_current__2BEPc')]")
