@@ -2,10 +2,9 @@ import pytest
 from selenium import webdriver
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
-from geniration_em_pas import User
 from locators import Locators
 from data import Credantial
-from selenium.webdriver.support import expected_conditions as EC
+from name import *
 
 @pytest.fixture
 def driver():
@@ -16,13 +15,13 @@ def driver():
 
 @pytest.fixture
 def main_page_start(driver):
-    login_page_start = "https://stellarburgers.nomoreparties.site/"
+    login_page_start = main_site
     driver.get(login_page_start)
     return driver
 
 @pytest.fixture
 def registration_page(driver):
-    login_page = "https://stellarburgers.nomoreparties.site/register"
+    login_page = register_site
     driver.get(login_page)
     return driver
 
